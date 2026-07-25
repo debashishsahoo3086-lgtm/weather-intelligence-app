@@ -20,6 +20,10 @@ A responsive, single-page weather application built with a stunning "Frosted Gla
 - **Icons:** Lucide React
 - **Weather API:** [Open-Meteo](https://open-meteo.com/) (Geocoding & Forecast APIs - No API key required)
 
+## Deployment Workflow
+
+This application was generated and connected directly from **Google AI Studio**, pushed to **GitHub**, and then deployed using **Cloudflare**.
+
 ## Getting Started
 
 1. Clone the repository.
