@@ -22,7 +22,19 @@ A responsive, single-page weather application built with a stunning "Frosted Gla
 
 ## Deployment Workflow
 
-This application was generated and connected directly from **Google AI Studio**, pushed to **GitHub**, and then deployed using **Cloudflare**.
+### 1. Google AI Studio to GitHub
+* The app was generated using **Google AI Studio App Build**.
+* The source code was exported directly to this GitHub repository using the built-in **Push to GitHub / Export to GitHub** feature. 
+
+### 2. Cloudflare Pages Deployment
+This app is hosted on Cloudflare Pages. To deploy or redeploy:
+* Log in to Cloudflare and navigate to **Workers & Pages**.
+* Click **Create application** -> **Pages** -> **Connect to Git**.
+* Select this GitHub repository.
+* Use the following build settings:
+  * **Framework preset**: `Vite` (or `None`)
+  * **Build command**: `npm run build`
+  * **Build output directory**: `dist`
 
 ## Getting Started
 
