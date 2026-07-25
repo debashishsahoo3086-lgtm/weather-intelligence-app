@@ -1,0 +1,6 @@
+{
+  "name": "Weather Intelligence App",
+  "description": "A responsive, single-page Weather Intelligence App showing current weather, 7-day forecast, temperature trend chart, and planning recommendations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
