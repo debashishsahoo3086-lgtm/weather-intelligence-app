@@ -24,11 +24,32 @@ export function CurrentWeatherDisplay({ location, weather }: CurrentWeatherDispl
   const iconName = getWeatherIcon(weather.weathercode);
   const description = getWeatherDescription(weather.weathercode);
 
+  let formattedTime = '';
+  if (weather.time) {
+    try {
+      const timeParts = weather.time.split('T')[1];
+      if (timeParts) {
+        const [hours, minutes] = timeParts.split(':');
+        const hourNum = parseInt(hours, 10);
+        const ampm = hourNum >= 12 ? 'PM' : 'AM';
+        const hour12 = hourNum % 12 || 12;
+        formattedTime = `${hour12}:${minutes} ${ampm}`;
+      }
+    } catch (e) {
+      // safe fallback
+    }
+  }
+
   return (
     <div className="glass p-8 flex flex-col items-center text-center w-full relative z-10">
-      <h2 className="text-3xl font-semibold mb-2 text-slate-800 dark:text-slate-100">
+      <h2 className="text-3xl font-semibold mb-1 text-slate-800 dark:text-slate-100">
         {location.name}
       </h2>
+      {formattedTime && (
+        <div className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">
+          Local Time: {formattedTime}
+        </div>
+      )}
       <div className="text-[64px] my-2">
          <WeatherIcon iconName={iconName} className="w-20 h-20 text-blue-500 dark:text-blue-400 drop-shadow-md" />
       </div>
